@@ -921,7 +921,8 @@ ASTPointer<MemberAccess> ASTJsonImporter::createMemberAccess(Json::Value const& 
 	return createASTNode<MemberAccess>(
 		_node,
 		convertJsonToASTNode<Expression>(member(_node, "expression")),
-		memberAsASTString(_node, "memberName")
+		memberAsASTString(_node, "memberName"),
+		SourceLocation()
 	);
 }
 
