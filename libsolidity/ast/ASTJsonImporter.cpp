@@ -884,7 +884,8 @@ ASTPointer<FunctionCall> ASTJsonImporter::createFunctionCall(Json::Value const& 
 		_node,
 		convertJsonToASTNode<Expression>(member(_node, "expression")),
 		arguments,
-		names
+		names,
+		std::vector<SourceLocation>(names.size()) // Dummy Array
 	);
 }
 
